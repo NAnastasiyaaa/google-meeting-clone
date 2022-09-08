@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "url": "../img/person1.jpg",
+      "title": "Olian Garner",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 2,
+      "url": "../img/person2.jpg",
+      "title": "Joe Carlson",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "url": "../img/person3.jpg",
+      "title": "Nina Dutty",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "url": "../img/person4.jpg",
+      "title": "Jo Hali",
+      "isMuted": false,
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "url": "../img/person5.jpg",
+      "title": "Mal Odelli",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 6,
+      "url": "../img/person6.png",
+      "title": "Igor Coloman",
+      "isMuted": true,
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "url": "../img/person6.jpg",
+      "title": "Rota Michael",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 8,
+      "url": "../img/person7.jpg",
+      "title": "Jad Rogors",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 9,
+      "url": "../img/person11.jpg",
+      "title": "Lani Lew",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 10,
+      "url": "../img/person9.jpg",
+      "title": "Hago Novaik",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 11,
+      "url": "../img/person10.jpg",
+      "title": "Sonya Chacha",
+      "isMuted": false,
+      "isActive": false
+    },
+    {
+      "id": 12,
+      "url": "../img/person8.jpg",
+      "title": "You",
+      "isMuted": false,
+      "isActive": false
+    }
+  ]
+}

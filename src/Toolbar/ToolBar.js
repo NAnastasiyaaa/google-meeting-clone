@@ -1,6 +1,6 @@
 import React from "react";
-import ActivityBar from "./ActivityBar";
-import InformationBar from "./InformationBar";
+import ActivityBar from "../Toolbar/ActivityBar";
+import InformationBar from "../Toolbar/InformationBar";
 
 function ToolBar() {
   const toolBarBox = {
@@ -11,7 +11,7 @@ function ToolBar() {
     justifyContent: "space-between",
   };
   const meetingText = {
-    paddingLeft: "20px",
+    paddingLeft: "50px",
   };
   return (
     <div style={toolBarBox}>

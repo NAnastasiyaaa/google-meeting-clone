@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import MicIcon from "@mui/icons-material/Mic";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import PanToolOutlinedIcon from "@mui/icons-material/PanToolOutlined";
@@ -7,6 +8,8 @@ import ClosedCaptionOffOutlinedIcon from "@mui/icons-material/ClosedCaptionOffOu
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import CallEndIcon from "@mui/icons-material/CallEnd";
 import { IconButton } from "@mui/material";
+import MicOffIcon from "@mui/icons-material/MicOff";
+import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 
 function ActivityBar() {
   const activityButton = {
@@ -27,25 +30,32 @@ function ActivityBar() {
     display: "flex",
     justifyContent: "center",
   };
+
+  const [isMuted, setIsMuted] = useState(false);
+  const [isVideoOn, setIsVideoOn] = useState(true);
+
   return (
     <div style={activityButtons}>
-      <IconButton style={activityButton}>
-        <MicIcon></MicIcon>
+      <IconButton onClick={() => setIsMuted(!isMuted)} style={activityButton}>
+        {isMuted ? <MicOffIcon /> : <MicIcon />}
+      </IconButton>
+      <IconButton
+        onClick={() => setIsVideoOn(!isVideoOn)}
+        style={activityButton}
+      >
+        {isVideoOn ? <VideocamOutlinedIcon /> : <VideocamOffIcon />}
       </IconButton>
       <IconButton style={activityButton}>
-        <VideocamOutlinedIcon></VideocamOutlinedIcon>
+        <PanToolOutlinedIcon />
       </IconButton>
       <IconButton style={activityButton}>
-        <PanToolOutlinedIcon></PanToolOutlinedIcon>
+        <ClosedCaptionOffOutlinedIcon />
       </IconButton>
       <IconButton style={activityButton}>
-        <ClosedCaptionOffOutlinedIcon></ClosedCaptionOffOutlinedIcon>
+        <PresentToAllOutlinedIcon />
       </IconButton>
       <IconButton style={activityButton}>
-        <PresentToAllOutlinedIcon></PresentToAllOutlinedIcon>
-      </IconButton>
-      <IconButton style={activityButton}>
-        <MoreVertOutlinedIcon></MoreVertOutlinedIcon>
+        <MoreVertOutlinedIcon />
       </IconButton>
       <IconButton>
         <CallEndIcon style={callEndIcon}></CallEndIcon>

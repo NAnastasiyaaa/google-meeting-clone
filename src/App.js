@@ -1,9 +1,11 @@
 import "./App.css";
-import ToolBar from "./ToolBar";
+import ToolBar from "./Toolbar/ToolBar";
+import ImageList from "./PeopleGallery/ImageList";
 
 function App() {
   return (
     <div>
+      <ImageList />
       <ToolBar />
     </div>
   );

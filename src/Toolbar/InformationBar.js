@@ -12,6 +12,7 @@ function InformationBar() {
   const informationButtons = {
     display: "flex",
     justifyContent: "center",
+    paddingRight: "30px",
   };
   return (
     <div style={informationButtons}>
