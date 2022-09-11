@@ -1,4 +1,3 @@
-import "./App.css";
 import ToolBar from "./Toolbar/ToolBar";
 import ImageList from "./PeopleGallery/ImageList";
 

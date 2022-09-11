@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import MicOffIcon from "@mui/icons-material/MicOff";
 
 function ImageContainer({ user }) {
+  const initImg = user.url;
+  const [currentImage, setCurrentImage] = useState(initImg);
   const imageCard = {
     width: "350px",
     height: "215px",
     borderRadius: "10px",
-    objectFit:'cover'
+    objectFit: "cover",
   };
   const text = {
     position: "absolute",
@@ -15,11 +17,16 @@ function ImageContainer({ user }) {
     marginLeft: "20px",
     color: "white",
   };
+  const active = {
+    position: "relative",
+  };
   const activeUser = {
-    border: "3px solid #1E90FF",
+    position: "absolute",
+    boxSizing: "border-box",
+    border: "3px solid  #669df6",
     borderRadius: "10px",
-    width: "349px",
-    height: "213px",
+    width: "350px",
+    height: "215px",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   };
   const soundIcon = {
@@ -38,14 +45,24 @@ function ImageContainer({ user }) {
     backgroundColor: "rgb(95,99,104)",
     borderRadius: "50px",
   };
+
+  const getRandomImage = async () => {
+    if (currentImage === initImg) {
+      const request = await fetch("http://localhost:5000/api/randomimage");
+      const json = await request.json();
+      setCurrentImage(`http://localhost:5000/cats/${json.image}`);
+    } else {
+      setCurrentImage(initImg);
+    }
+  };
+
   return (
-    <div style={user.isActive ? activeUser : {}}>
+    <div style={user.isActive ? active : {}} onClick={getRandomImage}>
+      <div style={user.isActive ? activeUser : {}}></div>
       {user.isMuted && !user.isActive && <MicOffIcon style={microClosedIcon} />}
       {!user.isMuted && user.isActive && <GraphicEqIcon style={soundIcon} />}
-      {user.url ? (
-        <img src={user.url} style={imageCard} alt={user.title}></img>
-      ) : (
-        <div></div>
+      {user.url && (
+        <img src={currentImage} style={imageCard} alt={user.title} />
       )}
       <p style={text}>{user.title}</p>
     </div>
