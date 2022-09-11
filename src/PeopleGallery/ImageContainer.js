@@ -23,6 +23,7 @@ function ImageContainer({ user }) {
   const activeUser = {
     position: "absolute",
     boxSizing: "border-box",
+
     border: "3px solid  #669df6",
     borderRadius: "10px",
     width: "350px",
@@ -48,9 +49,9 @@ function ImageContainer({ user }) {
 
   const getRandomImage = async () => {
     if (currentImage === initImg) {
-      const request = await fetch("http://localhost:5000/api/randomimage");
+      const request = await fetch("https://meeting-clone-nastya.herokuapp.com/api/randomimage");
       const json = await request.json();
-      setCurrentImage(`http://localhost:5000/cats/${json.image}`);
+      setCurrentImage(`https://meeting-clone-nastya.herokuapp.com/cats/${json.image}`);
     } else {
       setCurrentImage(initImg);
     }
